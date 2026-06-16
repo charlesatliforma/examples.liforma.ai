@@ -1,7 +1,15 @@
-const SDK_URL = 'https://cdn.liforma.ai/sdk/v1/client.js';
+/** Bump when the CDN bundle changes materially (avatar paths, API, etc.). */
+const SDK_BUILD = '3';
+
+const SDK_URL = `https://cdn.liforma.ai/sdk/v1/client.js?b=${SDK_BUILD}`;
 const SDK_MARKER = 'data-liforma-sdk';
 
 let loadPromise: Promise<void> | null = null;
+
+function existingSdkScript(): HTMLScriptElement | null {
+	const el = document.querySelector(`script[${SDK_MARKER}]`);
+	return el instanceof HTMLScriptElement ? el : null;
+}
 
 export function loadLiformaSdk(): Promise<void> {
 	if (typeof document === 'undefined') {
@@ -13,11 +21,13 @@ export function loadLiformaSdk(): Promise<void> {
 	}
 
 	loadPromise = new Promise((resolve, reject) => {
-		const existing = document.querySelector(`script[${SDK_MARKER}]`);
-		if (existing) {
+		const existing = existingSdkScript();
+		if (existing?.src.includes(`b=${SDK_BUILD}`)) {
 			resolve();
 			return;
 		}
+
+		existing?.remove();
 
 		const script = document.createElement('script');
 		script.src = SDK_URL;
