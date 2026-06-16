@@ -36,12 +36,38 @@ Preserve lesson-based UX, Liforma web component embed, and close-before-switch l
 	</ul>
 
 	<div class="actions">
-		<a class="btn primary" href={example.liveDemoUrl} target="_blank" rel="noopener noreferrer">
-			Live demo
+		{#if example.liveAppUrl}
+			<a
+				class="btn primary"
+				href={example.liveAppUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Live demo
+			</a>
+		{/if}
+		<a
+			class="btn"
+			class:primary={!example.liveAppUrl}
+			class:secondary={!!example.liveAppUrl}
+			href="/examples/{example.slug}/sveltekit"
+		>
+			Run locally
 		</a>
 		<a class="btn secondary" href={githubTreePath(example.githubPath)} target="_blank" rel="noopener noreferrer">
 			GitHub source
 		</a>
+		{#if example.meetExperienceUrl}
+			<a
+				class="btn secondary"
+				href={example.meetExperienceUrl}
+				target="_blank"
+				rel="noopener noreferrer"
+				title="Hosted avatar only — no lesson UI"
+			>
+				Avatar on Meet
+			</a>
+		{/if}
 		<a class="btn secondary" href={githubRawPath(example.specPath)} target="_blank" rel="noopener noreferrer">
 			spec.md
 		</a>
@@ -70,6 +96,12 @@ Preserve lesson-based UX, Liforma web component embed, and close-before-switch l
 
 	<h2>Related</h2>
 	<ul>
+		{#if example.liveAppUrl}
+			<li>
+				<a href={example.liveAppUrl} target="_blank" rel="noopener noreferrer">Live demo</a>
+				— try the hosted app
+			</li>
+		{/if}
 		<li><a href={externalLinks.docsQuickStart}>Docs: Quick Start</a></li>
 		<li><a href={externalLinks.docsEmbed}>Docs: Embed an Experience</a></li>
 		<li><a href={externalLinks.docsWebComponent}>Docs: Web Component</a></li>

@@ -13,17 +13,29 @@
 
 	<div class="card-grid">
 		{#each examples as example (example.slug)}
-			<a class="card" href="/examples/{example.slug}">
-				<span class="badge">{example.category}</span>
-				<h2>{example.title}</h2>
-				<p>{example.description}</p>
-				<ul class="meta-list">
-					{#each example.features as feature (feature)}
-						<li><span class="badge">{feature}</span></li>
-					{/each}
-				</ul>
-				<span class="card-link">View example →</span>
-			</a>
+			<article class="card">
+				<a class="card-body" href="/examples/{example.slug}">
+					<span class="badge">{example.category}</span>
+					<h2>{example.title}</h2>
+					<p>{example.description}</p>
+					<ul class="meta-list">
+						{#each example.features as feature (feature)}
+							<li><span class="badge">{feature}</span></li>
+						{/each}
+					</ul>
+					<span class="card-link">View example →</span>
+				</a>
+				{#if example.liveAppUrl}
+					<a
+						class="btn secondary card-live"
+						href={example.liveAppUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Live demo
+					</a>
+				{/if}
+			</article>
 		{/each}
 	</div>
 </div>

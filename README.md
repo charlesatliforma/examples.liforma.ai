@@ -39,6 +39,8 @@ cd examples/spanish-tutor/sveltekit && npm run verify
 
 ## Links
 
+- [Spanish Tutor live demo](https://spanish-tutor.examples.liforma.ai/) (hosted SvelteKit app)
 - [Docs](https://docs.liforma.ai/getting-started/quick-start)
-- [Live demo](https://www.liforma.ai/meet/demo-spanish-cafe)
+- [Example docs](https://examples.liforma.ai/examples/spanish-tutor)
+- [Avatar on Meet](https://www.liforma.ai/meet/demo-spanish-cafe) (avatar only, no lesson UI)
 - [GitHub](https://github.com/charlesatliforma/examples.liforma.ai)

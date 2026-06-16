@@ -8,7 +8,10 @@ export type ExampleMetadata = {
 	frameworks: SupportedFramework[];
 	features: string[];
 	githubPath: string;
-	liveDemoUrl: string;
+	/** Hosted runnable app (full lesson UI), when deployed. */
+	liveAppUrl?: string;
+	/** Hosted Meet page for the underlying avatar — not the full example app. */
+	meetExperienceUrl?: string;
 	specPath: string;
 };
 
@@ -22,7 +25,8 @@ export const examples: ExampleMetadata[] = [
 		frameworks: ['sveltekit', 'vanilla'],
 		features: ['Avatar Experience', 'Microphone', 'Transcript', 'Learning objective', 'Lessons'],
 		githubPath: 'examples/spanish-tutor',
-		liveDemoUrl: 'https://www.liforma.ai/meet/demo-spanish-cafe',
+		liveAppUrl: 'https://spanish-tutor.examples.liforma.ai/',
+		meetExperienceUrl: 'https://www.liforma.ai/meet/demo-spanish-cafe',
 		specPath: 'examples/spanish-tutor/spec.md'
 	}
 ];

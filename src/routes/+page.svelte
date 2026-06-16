@@ -31,12 +31,24 @@
 	<h2>Examples</h2>
 	<div class="card-grid">
 		{#each examples as example (example.slug)}
-			<a class="card" href="/examples/{example.slug}">
-				<span class="badge">{example.category}</span>
-				<h3>{example.title}</h3>
-				<p>{example.description}</p>
-				<span class="card-link">View example →</span>
-			</a>
+			<article class="card">
+				<a class="card-body" href="/examples/{example.slug}">
+					<span class="badge">{example.category}</span>
+					<h3>{example.title}</h3>
+					<p>{example.description}</p>
+					<span class="card-link">View example →</span>
+				</a>
+				{#if example.liveAppUrl}
+					<a
+						class="btn secondary card-live"
+						href={example.liveAppUrl}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						Live demo
+					</a>
+				{/if}
+			</article>
 		{/each}
 	</div>
 </section>

@@ -38,6 +38,10 @@
 					<a href="/examples/{example.slug}/{framework.slug}">{example.title}</a>
 					—
 					<a href={githubTreePath(implementationSourcePath(example, framework.slug))}>source</a>
+					{#if example.liveAppUrl && framework.slug === 'sveltekit'}
+						·
+						<a href={example.liveAppUrl} target="_blank" rel="noopener noreferrer">live demo</a>
+					{/if}
 				</li>
 			{/each}
 		</ul>

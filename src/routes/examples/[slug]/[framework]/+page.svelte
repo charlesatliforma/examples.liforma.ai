@@ -101,7 +101,24 @@ npx serve . -l 3008
 		</ul>
 
 		<div class="actions">
-			<a class="btn primary" href={githubTreePath(sourcePath)} target="_blank" rel="noopener noreferrer">
+			{#if example.liveAppUrl && framework.slug === 'sveltekit'}
+				<a
+					class="btn primary"
+					href={example.liveAppUrl}
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Try live demo
+				</a>
+			{/if}
+			<a
+				class="btn"
+				class:primary={!example.liveAppUrl || framework.slug !== 'sveltekit'}
+				class:secondary={!!example.liveAppUrl && framework.slug === 'sveltekit'}
+				href={githubTreePath(sourcePath)}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
 				View source on GitHub
 			</a>
 			<a class="btn secondary" href="/frameworks/{framework.slug}">Framework overview</a>
@@ -122,7 +139,18 @@ npx serve . -l 3008
 	<ul>
 		<li><a href={externalLinks.docsEmbed}>Embed an Experience</a></li>
 		<li><a href={externalLinks.docsWebComponent}>Web Component reference</a></li>
-		<li><a href={example.liveDemoUrl}>Live Meet demo</a></li>
+		{#if example.liveAppUrl && framework.slug === 'sveltekit'}
+			<li>
+				<a href={example.liveAppUrl} target="_blank" rel="noopener noreferrer">Live demo</a>
+				— hosted {example.title} app (SvelteKit)
+			</li>
+		{/if}
+		{#if example.meetExperienceUrl}
+			<li>
+				<a href={example.meetExperienceUrl}>Avatar on Meet</a>
+				— hosted avatar experience without the lesson app UI
+			</li>
+		{/if}
 	</ul>
 
 	<CopyPrompt prompt={prompt} />
