@@ -9,14 +9,7 @@ import ts from 'typescript-eslint';
 
 export default ts.config(
 	{
-		ignores: [
-			'.svelte-kit/**',
-			'.vercel/**',
-			'build/**',
-			'node_modules/**',
-			'static/**',
-			'examples/**'
-		]
+		ignores: ['.svelte-kit/**', '.vercel/**', 'build/**', 'node_modules/**', 'static/**']
 	},
 	eslint.configs.recommended,
 	...ts.configs.recommended,

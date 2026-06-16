@@ -1,42 +1,44 @@
-# sv
+# examples.liforma.ai
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+Production-quality Liforma example apps for developers and AI builders.
 
-## Creating a project
+## Local development
 
-If you're seeing this, you've probably already done this step. Congrats!
+Gallery site (port **3006**):
 
-```sh
-# create a new project
-npx sv create my-app
-```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-npx sv@0.16.1 create --template minimal --types ts --install npm examples.liforma.ai
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
+npm install
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-## Building
+Open [http://localhost:3006](http://localhost:3006).
 
-To create a production version of your app:
+## Runnable examples
 
-```sh
-npm run build
+### Spanish Tutor (SvelteKit) — port 3007
+
+```bash
+cd examples/spanish-tutor/sveltekit
+npm install
+npm run dev
 ```
 
-You can preview the production build with `npm run preview`.
+### Spanish Tutor (vanilla) — port 3008
 
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+```bash
+cd examples/spanish-tutor/vanilla
+npx serve . -l 3008
+```
+
+## Verification
+
+```bash
+npm run verify
+cd examples/spanish-tutor/sveltekit && npm run verify
+```
+
+## Links
+
+- [Docs](https://docs.liforma.ai/getting-started/quick-start)
+- [Live demo](https://www.liforma.ai/meet/demo-spanish-cafe)
+- [GitHub](https://github.com/charlesatliforma/examples.liforma.ai)

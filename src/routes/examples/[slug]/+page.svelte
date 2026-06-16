@@ -1,0 +1,98 @@
+<script lang="ts">
+	import CopyPrompt from '$lib/components/CopyPrompt.svelte';
+	import { githubRawPath, githubTreePath, externalLinks, GITHUB_REPO } from '$lib/constants';
+	import { getFramework } from '$lib/frameworks';
+	import type { PageData } from './$types';
+
+	let { data }: { data: PageData } = $props();
+
+	const example = $derived(data.example);
+
+	const agentPrompt = $derived(
+		`Use the Liforma ${example.title} example to build an app in your chosen framework.
+
+Read:
+- ${githubRawPath(example.specPath)}
+- ${githubTreePath(example.githubPath)}
+
+Preserve lesson-based UX, Liforma web component embed, and close-before-switch lesson flow.`
+	);
+</script>
+
+<svelte:head>
+	<title>{example.title} — Liforma Examples</title>
+	<meta name="description" content={example.description} />
+</svelte:head>
+
+<div class="page-shell prose">
+	<p class="eyebrow">{example.category}</p>
+	<h1>{example.title}</h1>
+	<p>{example.description}</p>
+
+	<ul class="meta-list">
+		{#each example.features as feature (feature)}
+			<li><span class="badge">{feature}</span></li>
+		{/each}
+	</ul>
+
+	<div class="actions">
+		<a class="btn primary" href={example.liveDemoUrl} target="_blank" rel="noopener noreferrer">
+			Live demo
+		</a>
+		<a class="btn secondary" href={githubTreePath(example.githubPath)} target="_blank" rel="noopener noreferrer">
+			GitHub source
+		</a>
+		<a class="btn secondary" href={githubRawPath(example.specPath)} target="_blank" rel="noopener noreferrer">
+			spec.md
+		</a>
+	</div>
+
+	<h2>What it demonstrates</h2>
+	<ul>
+		<li>Lesson-based app pattern — the app chooses a lesson; the lesson chooses the Liforma Experience.</li>
+		<li>CDN <code>&lt;liforma-experience&gt;</code> embed for public avatar experiences.</li>
+		<li>Close-before-switch — users end the session before picking another lesson.</li>
+		<li>Learning goals, session status, microphone guidance, and session notes UI.</li>
+	</ul>
+
+	<h2>Implementations</h2>
+	<div class="card-grid">
+		{#each example.frameworks as frameworkSlug (frameworkSlug)}
+			{@const framework = getFramework(frameworkSlug)}
+			<a class="card" href="/examples/{example.slug}/{frameworkSlug}">
+				<span class="badge available">{framework?.title ?? frameworkSlug}</span>
+				<h3>{framework?.title ?? frameworkSlug}</h3>
+				<p>{framework?.description ?? ''}</p>
+				<span class="card-link">View implementation →</span>
+			</a>
+		{/each}
+	</div>
+
+	<h2>Related</h2>
+	<ul>
+		<li><a href={externalLinks.docsQuickStart}>Docs: Quick Start</a></li>
+		<li><a href={externalLinks.docsEmbed}>Docs: Embed an Experience</a></li>
+		<li><a href={externalLinks.docsWebComponent}>Docs: Web Component</a></li>
+		<li><a href={GITHUB_REPO}>examples.liforma.ai on GitHub</a></li>
+	</ul>
+
+	<CopyPrompt prompt={agentPrompt} />
+</div>
+
+<style>
+	.eyebrow {
+		margin: 0 0 0.5rem;
+		font-size: 0.8125rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--accent-text);
+	}
+
+	.actions {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.75rem;
+		margin: 1.5rem 0 2rem;
+	}
+</style>
