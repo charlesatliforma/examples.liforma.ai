@@ -24,9 +24,14 @@ Phase 1 lessons share `exp_01DEMO1SPANISHCAFE`. The data model supports per-less
 - `sveltekit/` — primary reference implementation
 - `vanilla/` — minimal web component copy-paste example
 
-## Live demo
+## Try the app
 
-https://www.liforma.ai/meet/demo-spanish-cafe
+- **Live demo:** https://spanish-tutor.examples.liforma.ai/
+- **Run locally:** see `sveltekit/` or `vanilla/`
+
+## Avatar on Meet
+
+The hosted [Meet page](https://www.liforma.ai/meet/demo-spanish-cafe) runs the same underlying avatar experience **without** the Spanish Tutor lesson UI — useful for comparing embed-only vs full app.
 
 ## Docs
 

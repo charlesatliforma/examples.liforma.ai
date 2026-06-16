@@ -8,7 +8,7 @@ export const externalLinks = {
 	docsQuickStart: 'https://docs.liforma.ai/getting-started/quick-start',
 	docsEmbed: 'https://docs.liforma.ai/guides/embed',
 	docsWebComponent: 'https://docs.liforma.ai/sdk-reference/web-component',
-	meetDemo: 'https://www.liforma.ai/meet/demo-spanish-cafe'
+	meetExperience: 'https://www.liforma.ai/meet/demo-spanish-cafe'
 } as const;
 
 export function githubTreePath(path: string): string {
