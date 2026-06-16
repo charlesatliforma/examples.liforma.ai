@@ -30,7 +30,8 @@
 
 	const webComponentSnippet = `<script src="https://cdn.liforma.ai/sdk/v1/client.js"><\\/script>
 
-<liforma-experience experience-id="${DEMO_EXPERIENCE_ID}"></liforma-experience>`;
+<!-- experience-id comes from the selected lesson -->
+<liforma-experience experience-id="\${lesson.experienceId}"></liforma-experience>`;
 
 	const runCommands =
 		framework.slug === 'sveltekit'
@@ -77,10 +78,11 @@ npx serve . -l 3008
 		<h2>Run locally</h2>
 		<CodeBlock code={runCommands} lang="bash" filename="terminal" />
 
-		<h2>Environment</h2>
+		<h2>Lesson data</h2>
 		<p>
-			Copy <code>.env.example</code> to <code>.env</code> in the SvelteKit app. Phase 1 lessons use
-			<code>{DEMO_EXPERIENCE_ID}</code>.
+			Each lesson has its own <code>experienceId</code> in <code>src/lib/lessons.ts</code> (SvelteKit) or
+			<code>lessons.js</code> (vanilla). Every ID maps to a Liforma Experience with a different scenario,
+			location, and tutor prompt — for example café lessons use <code>{DEMO_EXPERIENCE_ID}</code>.
 		</p>
 
 		<h2>Liforma integration</h2>

@@ -9,7 +9,7 @@ When working in this repository:
 5. Prefer framework-native patterns.
 6. Do not hide the Liforma integration behind unnecessary abstraction.
 7. Include loading, error, microphone permission, and mobile states where relevant.
-8. Keep `.env.example` files up to date.
+8. Store Liforma `experienceId` values on lesson/app data (or your API), not in `.env`, unless your deployment genuinely sources them that way.
 9. Keep `spec.md` files accurate and useful for AI app builders.
 10. Do not include real API keys or secrets.
 11. Every example should be useful as source material for AI coding agents.

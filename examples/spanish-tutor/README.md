@@ -15,7 +15,7 @@ Lesson-based language learning app with a Liforma animated AI tutor.
 The app chooses a lesson, and the lesson chooses the Liforma Experience.
 ```
 
-Phase 1 lessons share `exp_01DEMO1SPANISHCAFE`. The data model supports per-lesson experience IDs later.
+Phase 1 lessons each use a dedicated Liforma Experience ID (café, hotel, directions, shopping). The data model matches how you'd store per-lesson IDs from a CMS or API.
 
 ## Files
 

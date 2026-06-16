@@ -25,14 +25,14 @@ Build a language-learning app where a learner practises Spanish with an animated
 
 ## Lessons (Phase 1)
 
-All lessons may use `exp_01DEMO1SPANISHCAFE` initially.
+Each lesson maps to its own Liforma Experience (scenario, location, and tutor prompt differ).
 
-| ID | Title |
-| --- | --- |
-| cafe-conversation | Café Conversation |
-| hotel-check-in | Hotel Check-in |
-| asking-directions | Asking for Directions |
-| shopping-clothes | Shopping for Clothes |
+| ID | Title | Experience ID |
+| --- | --- | --- |
+| cafe-conversation | Café Conversation | `exp_01DEMO1SPANISHCAFE` |
+| hotel-check-in | Hotel Check-in | `exp_01DEMO1SPANISHHOTEL` |
+| asking-directions | Asking for Directions | `exp_01DEMO1SPANISHDIRECTIONS` |
+| shopping-clothes | Shopping for Clothes | `exp_01DEMO1SPANISHSHOP` |
 
 Each lesson includes: `id`, `title`, `description`, `level`, `goal`, `experienceId`.
 
@@ -57,13 +57,11 @@ Each lesson includes: `id`, `title`, `description`, `level`, `goal`, `experience
 
 Listen for `close` on the custom element to return to idle.
 
-## Environment
+## Experience IDs
 
-```text
-PUBLIC_LIFORMA_EXPERIENCE_ID=exp_01DEMO1SPANISHCAFE
-```
+Each lesson carries an `experienceId` pointing at a Liforma Experience tuned for that scenario. IDs are hard-coded in `lessons.ts` / `lessons.js` — the same field you'd populate from your database or CMS in production.
 
-Optional: `PUBLIC_API_BASE_URL` for local API testing.
+Do **not** put experience IDs in environment variables unless your deployment pipeline genuinely sources them that way.
 
 ## Adaptation instructions
 

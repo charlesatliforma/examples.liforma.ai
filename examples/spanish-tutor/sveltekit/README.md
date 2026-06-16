@@ -4,7 +4,6 @@
 
 ```bash
 npm install
-cp .env.example .env
 npm run dev
 ```
 
@@ -18,10 +17,8 @@ npm run verify
 
 ## Customise
 
-- `src/lib/lessons.ts` — lesson content and experience IDs
+- `src/lib/lessons.ts` — lesson content and per-lesson `experienceId` values
 - `src/routes/+page.svelte` — main lesson UI
 - `src/lib/components/LiformaEmbed.svelte` — SDK + web component
 
-## Environment
-
-See `.env.example`.
+No `.env` file is required for Phase 1. Experience IDs live on each lesson record (the same shape you'd use from a database or CMS).

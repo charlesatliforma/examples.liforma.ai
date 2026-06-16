@@ -2,7 +2,7 @@
 
 ## Structure
 
-- **SvelteKit** (`sveltekit/`) — canonical reference with typed lessons, components, and env example.
+- **SvelteKit** (`sveltekit/`) — canonical reference with typed lessons and components.
 - **Vanilla** (`vanilla/`) — same UX with `index.html`, `lessons.js`, `app.js` for copy-paste.
 
 ## Integration
@@ -19,7 +19,7 @@ Phase 1 uses the CDN web component only — not `@liforma/client` npm (unpublish
 
 ## Lesson data
 
-`experienceId` lives on each lesson so future lessons can point to different Liforma Experiences without restructuring the UI.
+`experienceId` on each lesson selects a Liforma Experience with scenario-specific tutor instructions and location (hard-coded in Phase 1; from your DB/CMS in production).
 
 ## Do not over-engineer
 

@@ -12,7 +12,7 @@ Preserve:
 - learning goal card and session status
 - transcript / session notes panel
 - responsive layout
-- environment variable names from .env.example
+- per-lesson \`experienceId\` in lesson data (not environment variables)
 - TypeScript and normal CSS (no Tailwind)
 
 Adapt:
