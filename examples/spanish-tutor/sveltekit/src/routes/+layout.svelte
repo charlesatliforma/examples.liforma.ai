@@ -5,6 +5,7 @@
 </script>
 
 <svelte:head>
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 	<title>Spanish Tutor — Liforma Example</title>
 	<meta
 		name="description"
@@ -20,12 +21,12 @@
 				<h1>Spanish Tutor</h1>
 			</div>
 			<a
-				class="meet-link"
-				href="https://www.liforma.ai/meet/demo-spanish-cafe"
+				class="docs-link"
+				href="https://examples.liforma.ai/examples/spanish-tutor"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				Open live demo
+				Example docs
 			</a>
 		</div>
 	</header>
@@ -72,13 +73,13 @@
 		letter-spacing: -0.02em;
 	}
 
-	.meet-link {
+	.docs-link {
 		font-size: 0.875rem;
 		font-weight: 500;
 		text-decoration: none;
 	}
 
-	.meet-link:hover {
+	.docs-link:hover {
 		text-decoration: underline;
 	}
 

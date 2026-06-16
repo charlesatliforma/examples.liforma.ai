@@ -1,5 +1,5 @@
 /** Bump when the CDN bundle changes materially (avatar paths, API, etc.). */
-const SDK_BUILD = '4';
+const SDK_BUILD = '5';
 
 const SDK_URL = `https://cdn.liforma.ai/sdk/v1/client.js?b=${SDK_BUILD}`;
 const SDK_MARKER = 'data-liforma-sdk';
