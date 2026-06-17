@@ -27,6 +27,7 @@ Phase 1 lessons each use a dedicated Liforma Experience ID (café, hotel, direct
 ## Try the app
 
 - **Live demo:** https://spanish-tutor.examples.liforma.ai/
+- **Deploy:** see [`sveltekit/DEPLOY.md`](./sveltekit/DEPLOY.md)
 - **Run locally:** see `sveltekit/` or `vanilla/`
 
 ## Avatar on Meet

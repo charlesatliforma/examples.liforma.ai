@@ -4,6 +4,7 @@ export const DEMO_EXPERIENCE_ID = 'exp_01DEMO1SPANISHCAFE';
 
 export const externalLinks = {
 	www: 'https://www.liforma.ai',
+	app: 'https://app.liforma.ai',
 	docs: 'https://docs.liforma.ai',
 	docsQuickStart: 'https://docs.liforma.ai/getting-started/quick-start',
 	docsEmbed: 'https://docs.liforma.ai/guides/embed',
