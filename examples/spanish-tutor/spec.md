@@ -51,7 +51,7 @@ Each lesson includes: `id`, `title`, `description`, `level`, `goal`, `experience
 ## Liforma integration
 
 ```html
-<script src="https://cdn.liforma.ai/sdk/v1/client.js"></script>
+<script src="https://cdn.liforma.ai/sdk/v2/client.js"></script>
 <liforma-experience experience-id="EXP_ID_FROM_LESSON"></liforma-experience>
 ```
 

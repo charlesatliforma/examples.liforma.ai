@@ -28,7 +28,7 @@ export function vanillaAgentPrompt(exampleTitle: string, githubPath: string): st
 Source repo folder: ${githubPath}/vanilla
 
 Preserve:
-- CDN script: https://cdn.liforma.ai/sdk/v1/client.js
+- CDN script: https://cdn.liforma.ai/sdk/v2/client.js
 - \`<liforma-experience experience-id="..." />\` embed
 - lesson list with close-before-switch behaviour
 - learning goal card, session controls, session notes

@@ -9,6 +9,15 @@ npm run dev
 
 http://localhost:3007
 
+**Local avatar embed** also needs these running:
+
+```bash
+# From workspace root (liforma/)
+cd api.liforma.ai && npm run dev      # :3001
+cd player.liforma.ai && npm run dev    # :3002
+cd cdn.liforma.ai && npm run dev       # :3010 — serves sdk/v2 locally
+```
+
 ## Verify
 
 ```bash

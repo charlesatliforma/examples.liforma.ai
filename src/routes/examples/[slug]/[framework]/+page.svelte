@@ -28,7 +28,7 @@
 		return genericPortPrompt(example.title, example.githubPath, framework.slug);
 	});
 
-	const webComponentSnippet = `<script src="https://cdn.liforma.ai/sdk/v1/client.js"><\\/script>
+	const webComponentSnippet = `<script src="https://cdn.liforma.ai/sdk/v2/client.js"><\\/script>
 
 <!-- experience-id comes from the selected lesson -->
 <liforma-experience experience-id="\${lesson.experienceId}"></liforma-experience>`;

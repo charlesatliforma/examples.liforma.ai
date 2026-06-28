@@ -9,7 +9,7 @@
 	const framework = $derived(data.framework);
 	const relatedExamples = $derived(data.relatedExamples);
 
-	const snippet = `<script src="https://cdn.liforma.ai/sdk/v1/client.js"><\\/script>
+	const snippet = `<script src="https://cdn.liforma.ai/sdk/v2/client.js"><\\/script>
 <liforma-experience experience-id="${DEMO_EXPERIENCE_ID}"></liforma-experience>`;
 </script>
 

@@ -17,6 +17,8 @@ Open [http://localhost:3006](http://localhost:3006).
 
 ### Spanish Tutor (SvelteKit) — port 3007
 
+Requires **api** (:3001), **player** (:3002), and **cdn** preview (:3010) for the v2 SDK:
+
 ```bash
 cd examples/spanish-tutor/sveltekit
 npm install
