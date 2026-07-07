@@ -9,14 +9,15 @@ npm run dev
 
 http://localhost:3007
 
-**Local avatar embed** also needs these running:
+**Local avatar embed** also needs API and player running (v2 SDK loads from production CDN):
 
 ```bash
 # From workspace root (liforma/)
 cd api.liforma.ai && npm run dev      # :3001
 cd player.liforma.ai && npm run dev    # :3002
-cd cdn.liforma.ai && npm run dev       # :3010 — serves sdk/v2 locally
 ```
+
+Optional: `cd cdn.liforma.ai && npm run dev` (`:3010`) only when testing unpublished SDK changes.
 
 ## Verify
 

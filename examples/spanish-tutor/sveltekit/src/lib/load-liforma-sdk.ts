@@ -4,7 +4,6 @@ const SDK_BUILD = '6';
 const SDK_MARKER = 'data-liforma-sdk';
 
 const PRODUCTION_CDN_BASE_URL = 'https://cdn.liforma.ai';
-const LOCAL_CDN_BASE_URL = 'http://localhost:3010';
 const LOCAL_API_BASE_URL = 'http://localhost:3001';
 const LOCAL_PLAYER_EMBED_URL = 'http://localhost:3002/embed';
 
@@ -12,16 +11,8 @@ const SDK_LOAD_TIMEOUT_MS = 20_000;
 
 let loadPromise: Promise<void> | null = null;
 
-function cdnBaseUrl(): string {
-	if (import.meta.env.DEV) {
-		return LOCAL_CDN_BASE_URL;
-	}
-	return PRODUCTION_CDN_BASE_URL;
-}
-
 function sdkUrl(): string {
-	const base = cdnBaseUrl().replace(/\/$/, '');
-	return `${base}/sdk/v2/client.js?b=${SDK_BUILD}`;
+	return `${PRODUCTION_CDN_BASE_URL.replace(/\/$/, '')}/sdk/v2/client.js?b=${SDK_BUILD}`;
 }
 
 function isSdkReady(): boolean {
@@ -38,8 +29,8 @@ function sdkLoadError(url: string): Error {
 	if (import.meta.env.DEV) {
 		return new Error(
 			`Failed to load Liforma SDK from ${url}. ` +
-				'Start the local CDN preview: cd cdn.liforma.ai && npm run dev (port 3010), ' +
-				'and ensure api (:3001) and player (:3002) are running.'
+				'Ensure api (:3001) and player (:3002) are running for local embed. ' +
+				'Use cdn.liforma.ai npm run dev (:3010) only when testing unpublished SDK changes.'
 		);
 	}
 	return new Error(
