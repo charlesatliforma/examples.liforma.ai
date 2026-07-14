@@ -11,11 +11,11 @@ export default ts.config(
 	{
 		ignores: [
 			'.svelte-kit/**',
+			'**/.svelte-kit/**',
 			'.vercel/**',
 			'build/**',
 			'node_modules/**',
-			'static/**',
-			'examples/**'
+			'static/**'
 		]
 	},
 	eslint.configs.recommended,
@@ -36,7 +36,7 @@ export default ts.config(
 	},
 	...svelte.configs['flat/recommended'],
 	{
-		files: ['**/*.svelte'],
+		files: ['**/*.svelte', '**/*.svelte.ts', '**/*.svelte.js'],
 		languageOptions: {
 			parser: svelteParser,
 			parserOptions: {

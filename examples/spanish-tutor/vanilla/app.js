@@ -107,6 +107,7 @@ function mountEmbed() {
 
 	const embed = document.createElement('liforma-experience');
 	embed.setAttribute('experience-id', lesson.experienceId);
+	embed.setAttribute('language', 'es');
 	embed.className = 'liforma-embed';
 	embed.addEventListener('close', handleEmbedClose);
 	embedRegionEl.appendChild(embed);

@@ -1,4 +1,6 @@
-/** @typedef {'Beginner' | 'Intermediate'} LessonLevel */
+/**
+ * @typedef {'Beginner' | 'Intermediate'} LessonLevel
+ */
 
 /**
  * @typedef {Object} Lesson
@@ -13,35 +15,53 @@
 /** @type {Lesson[]} */
 export const lessons = [
 	{
-		id: 'cafe-conversation',
-		title: 'Café Conversation',
-		description: 'Order drinks and snacks in a Spanish café.',
+		id: 'coffee-barista',
+		title: 'Coffee Shop Barista',
+		description: 'Order coffee and a pastry at a London café.',
 		level: 'Beginner',
-		goal: 'Practise greeting the waiter, ordering a drink, asking for the bill, and saying thank you.',
-		experienceId: 'exp_01DEMO1SPANISHCAFE'
+		goal: 'Practise greeting the barista, ordering a drink and snack, and paying.',
+		experienceId: 'exp_01MEET_COFFEE_BARISTA'
 	},
 	{
-		id: 'hotel-check-in',
+		id: 'gp-doctor',
+		title: 'GP Appointment',
+		description: 'Describe a mild health concern at the doctor.',
+		level: 'Beginner',
+		goal: 'Practise explaining symptoms and understanding simple medical advice.',
+		experienceId: 'exp_01MEET_GP_DOCTOR'
+	},
+	{
+		id: 'hotel-reception',
 		title: 'Hotel Check-in',
-		description: 'Check into a hotel and ask about your room.',
+		description: 'Check into a boutique hotel at reception.',
 		level: 'Beginner',
-		goal: 'Practise giving your name, confirming a reservation, asking about breakfast, and finding your room.',
-		experienceId: 'exp_01DEMO1SPANISHHOTEL'
+		goal: 'Practise giving your name, confirming a reservation, and asking about your room.',
+		experienceId: 'exp_01MEET_HOTEL_RECEPTIONIST'
 	},
 	{
-		id: 'asking-directions',
-		title: 'Asking for Directions',
-		description: 'Ask where places are and understand simple directions.',
+		id: 'airport-checkin',
+		title: 'Airport Check-in',
+		description: 'Check in for a flight at the airport desk.',
 		level: 'Beginner',
-		goal: 'Practise asking for directions to a station, museum, or restaurant.',
-		experienceId: 'exp_01DEMO1SPANISHDIRECTIONS'
+		goal: 'Practise stating your destination, baggage, and seat preference.',
+		experienceId: 'exp_01MEET_AIRPORT_CHECKIN'
 	},
 	{
-		id: 'shopping-clothes',
-		title: 'Shopping for Clothes',
-		description: 'Ask for sizes, colours, and prices in a clothes shop.',
+		id: 'spanish-cafe',
+		title: 'Spanish Café',
+		description: 'Order food and drinks at a Spanish café.',
 		level: 'Beginner',
-		goal: 'Practise asking for a size, describing colours, and asking how much something costs.',
-		experienceId: 'exp_01DEMO1SPANISHSHOP'
+		goal: 'Practise ordering a drink and snack and asking for the bill.',
+		experienceId: 'exp_01MEET_SPANISH_CAFE_WAITRESS'
+	},
+	{
+		id: 'practice-nurse',
+		title: 'Practice Nurse',
+		description: 'Book an appointment at the doctor’s surgery.',
+		level: 'Beginner',
+		goal: 'Practise describing why you came in and arranging a GP appointment.',
+		experienceId: 'exp_01MEET_PRACTICE_NURSE'
 	}
 ];
+
+export const SPANISH_TUTOR_LANGUAGE = 'es';

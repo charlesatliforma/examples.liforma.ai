@@ -57,7 +57,7 @@
 		</div>
 	{:else}
 		<div class="embed-host" bind:this={host}>
-			<liforma-experience experience-id={experienceId}></liforma-experience>
+			<liforma-experience experience-id={experienceId} language="es"></liforma-experience>
 		</div>
 	{/if}
 </div>
